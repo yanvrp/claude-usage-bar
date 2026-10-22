@@ -5,9 +5,11 @@ on:
   pull_request:
 jobs:
   build:
-    runs-on: macos-15
+    runs-on: macos-26
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
+      - name: Versões
+        run: swift --version
       - name: Compilar
         run: swift build -c release
       - name: Testes
